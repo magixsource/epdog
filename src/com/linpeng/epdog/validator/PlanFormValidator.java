@@ -4,7 +4,7 @@ import com.jfinal.core.Controller;
 import com.jfinal.validate.Validator;
 
 /**
- * 创建计划表单验证器
+ * Plan validator after save plan on create form
  * 
  * @author linpeng
  *

@@ -6,7 +6,7 @@ import com.jfinal.core.Controller;
 import com.linpeng.epdog.model.ExplainDetail;
 
 /**
- * 执行情况详细情况
+ * SQL Explain result controller
  * 
  * @author linpeng
  *

@@ -5,21 +5,21 @@ import com.jfinal.plugin.activerecord.Page;
 import com.linpeng.epdog.model.Explain;
 
 /**
- * 负责执行Plan并返回结果
+ * SQL Explain controller
  * 
  * @author linpeng
  *
  */
 public class ExplainController extends Controller {
 	/**
-	 * 展示分析报告
+	 * Paginate show all explain information
 	 */
 	public void index() {
 
 	}
-	
+
 	/**
-	 * 查询并展示数据
+	 * Query and paginate result
 	 */
 	public void query() {
 		String pid = getPara("pid");

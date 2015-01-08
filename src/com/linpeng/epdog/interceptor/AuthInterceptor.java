@@ -6,7 +6,7 @@ import com.jfinal.core.Controller;
 import com.linpeng.epdog.model.User;
 
 /**
- * ÊÇ·ñµÇÂ¼À¹½ØÆ÷
+ * Authentic or not
  * 
  * @author linpeng
  *

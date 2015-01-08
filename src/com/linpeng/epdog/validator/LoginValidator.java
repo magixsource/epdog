@@ -4,7 +4,7 @@ import com.jfinal.core.Controller;
 import com.jfinal.validate.Validator;
 
 /**
- * 登录界面验证器
+ * login validator,required username & password
  * 
  * @author linpeng
  *

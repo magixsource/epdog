@@ -8,7 +8,7 @@ import com.linpeng.epdog.model.User;
 import com.linpeng.epdog.validator.LoginValidator;
 
 /**
- * 负责管理员登录登出
+ * Explain-plan dog system login & logout controller
  * 
  * @author linpeng
  *

@@ -3,7 +3,7 @@ package com.linpeng.epdog.model;
 import com.jfinal.plugin.activerecord.Model;
 
 /**
- * 用户模型
+ * User model, very simple model
  * 
  * @author linpeng
  *

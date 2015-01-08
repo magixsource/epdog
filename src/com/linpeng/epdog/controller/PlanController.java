@@ -14,7 +14,7 @@ import com.linpeng.epdog.model.Plan;
 import com.linpeng.epdog.validator.PlanFormValidator;
 
 /**
- * 负责Plan的新增、修改、删除和查询
+ * Explain-plan Plan controller
  * 
  * @author linpeng
  *
@@ -22,7 +22,7 @@ import com.linpeng.epdog.validator.PlanFormValidator;
 public class PlanController extends Controller {
 
 	/**
-	 * 展示计划信息
+	 * Show all plan in system
 	 */
 	public void index() {
 		// page
@@ -39,20 +39,32 @@ public class PlanController extends Controller {
 		render("index.html");
 	}
 
+	/**
+	 * Create a new Plan
+	 */
 	public void create() {
 
 	}
 
+	/**
+	 * Update plan information
+	 */
 	public void update() {
 		// TODO unsupported
 	}
 
+	/**
+	 * View plan
+	 */
 	public void view() {
 		String id = getPara("id");
 		Plan plan = Plan.dao.findById(id);
 		setAttr("plan", plan);
 	}
 
+	/**
+	 * Stone plan into database
+	 */
 	@Before(PlanFormValidator.class)
 	public void save() {
 		String id = getPara("id", null);
@@ -70,6 +82,9 @@ public class PlanController extends Controller {
 		redirect("/plan");
 	}
 
+	/**
+	 * Clear Plan and Explain of Plan and Detail of Explain
+	 */
 	@Before(Tx.class)
 	public void delete() {
 		String id = getPara("id");
@@ -92,6 +107,9 @@ public class PlanController extends Controller {
 		redirect("/plan");
 	}
 
+	/**
+	 * Try to explain SQL and stone explain result into database
+	 */
 	public void run() {
 		String id = getPara("id");
 		Plan plan = Plan.dao.findById(id);
