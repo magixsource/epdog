@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>Explain Plan · Dog</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    
+	    <link href="/static/css/bootstrap.css" rel="stylesheet">
+   		<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+		<div span="12">
+			<#if loginUser??>
+				<div class="alert alert-info">
+				 	Hello,${loginUser.username!''}
+				</div>
+			</#if>
+			<div class="text-right">
+				<a href="/plan/create" class="btn btn-primary">Create a plan!</a>
+			</div>
+			<div>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>SQL-Expression</th>
+							<th>Operations</th>
+						</tr>
+					</thead>
+					<tbody>	
+					<#list plans as plan>
+					    <tr>
+					        <td>${plan.name}</td>
+					        <td>
+					        	<#if plan.content??>
+						        	<#if plan.content?length gt 50>
+						        		${plan.content?substring(0,50)}...
+						        	<#else>
+						        		${plan.content!''}
+						        	</#if>
+					        	</#if>
+					        </td>
+					        <td><a class="btn btn-danger" href="/plan/delete?id=${plan.id}">Delete</a> <a class="btn btn-success" href="/plan/view?id=${plan.id}">View</a> <a class="btn btn-warning" href="/plan/run?id=${plan.id}">Run</a> <a class="btn btn-info" href="/explain/query?pid=${plan.id}">Reports</a></td>
+					    </tr>
+					</#list>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

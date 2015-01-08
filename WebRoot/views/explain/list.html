@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>Explain Plan · Dog</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    
+	    <link href="/static/css/bootstrap.css" rel="stylesheet">
+   		<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+		<table class="table">
+			<tr>
+				<th>Explain Time</th>
+				<th>Operations</th>
+			</tr>
+			<#list explains as explain>
+			    <tr>
+			        <td>${explain.EXCU_TIME}</td>
+			        <td><a class="btn btn-info" href="/explainDetail/query?explainid=${explain.id}">Details</a></td>
+			    </tr>
+			</#list>
+		</table>
+		
+	</body>
+</html>

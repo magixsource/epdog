@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>Explain Plan · Dog</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    
+	    <link href="/static/css/bootstrap.css" rel="stylesheet">
+   		<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+		<table class="table">
+			<tr>
+				<th>ID</th>
+				<th>Operation</th>
+				<th>Name</th>
+				<th>Rows</th>
+				<th>Bytes</th>
+				<th>Cost (%CPU)</th>
+				<th>Time</th>
+			</tr>
+			<#list explainDetails as item>
+			    <tr>
+			        <td>${item.EXPLAIN_IDX}</td>
+			        <td>${item.EXPLAIN_OPERATION}</td>
+			        <td>${item.EXPLAIN_NAME!''}</td>
+			        <td>${item.EXPLAIN_ROWS}</td>
+			        <td>${item.EXPLAIN_BYTES}</td>
+			        <td>${item.EXPLAIN_COST}</td>
+			        <td>${item.EXPLAIN_TIME}</td>
+			    </tr>
+			</#list>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>Explain Plan · Dog</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    
+	    <link href="/static/css/bootstrap.css" rel="stylesheet">
+   		<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="span12">
+			<form class="form-horizontal" id="createForm" name="createForm" action="/plan/save" method="post">
+				<div class="control-group">
+					<label class="control-label" for="name">名称</label>
+					<div class="controls">
+						<input type="text" name="name" id="name" value="" />
+						<span class="help-inline">${nameMsg!''}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="content">语句</label>
+					<div class="controls">
+						<textarea rows="10" cols="20" name="content" id="content"></textarea>
+						<span class="help-inline">${contentMsg!''}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<input type="submit" class="btn btn-primary" value="Save" />
+					</div>
+				</div>
+			</form>
+		</div>
+		
+	</body>
+</html>
