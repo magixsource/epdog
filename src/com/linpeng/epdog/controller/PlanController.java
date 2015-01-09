@@ -31,7 +31,6 @@ public class PlanController extends Controller {
 		Page<Plan> page = Plan.dao.paginate(pageNumber, pageSize, "select *",
 				" from t_plan");
 		setAttr("plans", page.getList());
-		setAttr("total", page.getTotalRow());
 		setAttr("totalpage", page.getTotalPage());
 		setAttr("page", page.getPageNumber());
 		setAttr("pagesize", page.getPageSize());
