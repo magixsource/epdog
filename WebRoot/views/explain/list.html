@@ -22,6 +22,26 @@
 			    </tr>
 			</#list>
 		</table>
-		
+		<div class="pagination pagination-centered">
+		  <ul>
+		  	<#if page==1>
+		  		<li class="disabled"><a href="###">Prev</a></li>
+		  	<#else>
+		  		<li><a href="/explain/query?pid=${pid}&page=${page-1}">Prev</a></li>
+		  	</#if>
+		    <#list 1..totalpage as item>
+		    	<#if page==item>
+		    		<li class="disabled"><a href="###">${item}</a></li>
+		    	<#else>	
+		    		<a href="/explain/query?pid=${pid}&page=${item}">${item}</a>
+		    	</#if>
+		    </#list>
+		    <#if page==totalpage>
+		    	<li class="disabled"><a href="###">Next</a></li>
+		    <#else>
+		    	<li><a href="/explain/query?pid=${pid}&page=${page+1}">Next</a></li>
+		    </#if>
+		  </ul>
+		</div>
 	</body>
 </html>

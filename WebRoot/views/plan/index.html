@@ -46,9 +46,29 @@
 					</#list>
 					</tbody>
 				</table>
+				<div class="pagination pagination-centered">
+				  <ul>
+				  	<#if page==1>
+				  		<li class="disabled"><a href="###">Prev</a></li>
+				  	<#else>
+				  		<li><a href="/plan/index?page=${page-1}">Prev</a></li>
+				  	</#if>
+				    <#list 1..totalpage as item>
+				    	<#if page==item>
+				    		<li class="disabled"><a href="###">${item}</a></li>
+				    	<#else>	
+				    		<a href="/plan/index?page=${item}">${item}</a>
+				    	</#if>
+				    </#list>
+				    <#if page==totalpage>
+				    	<li class="disabled"><a href="###">Next</a></li>
+				    <#else>
+				    	<li><a href="/plan/index?page=${page+1}">Next</a></li>
+				    </#if>
+				  </ul>
+				</div>
+				
 			</div>
 		</div>
-		
-		
 	</body>
 </html>
